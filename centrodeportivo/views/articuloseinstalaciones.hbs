@@ -9,7 +9,7 @@
 <container class="menus">
   <div class="row">
     <div class="col-sm">
-      <div id="posts" class="list-group" style="color: white;padding-left: 300px;width: 1300px;">
+      <div id="posts" class="list-group" style="color: white;padding-left: 120px;width: 1300px;">
         <div class="container">
           <div class="row" style="width: 700px;padding-top: 30px">
             <div class="col-sm" style="padding-left: 0cm;">
@@ -19,21 +19,21 @@
                   Filtrar por tipo
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="/foro/foro/1/Todos">Todos</a>
-                  <a class="dropdown-item" href="/foro/foro/1/Lore">Lore</a>
-                  <a class="dropdown-item" href="/foro/foro/1/Build">Build</a>
-                  <a class="dropdown-item" href="/foro/foro/1/Guia">Guia</a>
+                  <a class="dropdown-item" href="/articuloseinstalaciones/articuloseinstalaciones/1/Todos">Todos</a>
+                  <a class="dropdown-item" href="/articuloseinstalaciones/articuloseinstalaciones/1/Articulos">Articulos</a>
+                  <a class="dropdown-item" href="/articuloseinstalaciones/articuloseinstalaciones/1/Instalaciones">Instalaciones</a>
                 </div>
               </div>
             </div>
             <div class="col-sm">
-              <h5 class="card-title" style="padding-left: 100px;color: white;">{{filter}} - Publicaciones</h5>
+              <h5 class="card-title" style="padding-left: 150px;color: white;">{{filter}} - Ofertas</h5>
             </div>
           </div>
         </div>
-        <div id="articuloseintalaciones">
+        <div class="row" id="articuloseintalaciones">
           {{#each ofertas}}
-          <div class="card card-cascade card-ecommerce narrower" style="width: 400px;height:400px;background-color: #343a40;">
+          <div class="col" style="margin-left: 20px;">
+            <div class="card card-cascade card-ecommerce narrower" style="width: 400px;height:400px;background-color: #343a40;">
             <div class="view view-cascade overlay">
               <img class="card-img-top"
                 src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/img%20(5).jpg" alt="" style="width: 400px; height: 200px">
@@ -55,12 +55,14 @@
               </div>
             </div>
           </div>
+          </div>
+          
           {{/each}}
         </div>
       </div>
     </div>
 
-    <div id="recientesyboton" class="col-sm" style="padding-top: 70px;margin-left: 800px;">
+    <div id="recientesyboton" class="col-sm" style="padding-top: 70px;margin-left: 900px;">
       <div class="row">
         <div class="row" style="padding-top: 10px;">
           <div class="card" style="width: 389px;">

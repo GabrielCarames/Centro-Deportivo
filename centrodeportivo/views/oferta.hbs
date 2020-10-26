@@ -2,38 +2,17 @@
 <container class="container" style="color: white;padding-top: 30px;">
   <p id="iduser" hidden>{{userlogged.id}}</p>
   <div class="row" style="margin-left: 300px;">
-    <div class="col" style="max-width: 1000px;background-color: #343a40">
-      <h1 id="ptitulo">
-        {{publicacion.title}}
-      </h1>
-      <div class="row">
-        <div class="col">
-          <h4 id="pdescripcion" style="word-break:break-all">
-            {{publicacion.description}}
-          </h4>
-        </div>
-      </div>
-    </div>
-    <div class="card bg-light mb-3" style="margin-left: 45px;background-color: #343a40;height: 300px;">
-      <div>
-        <div class="jumbotron text-center hoverable p-4"
-          style="background-color: #343a40; width: 400px; height: 298px;">
-          <div class="row">
-            <div class="col">
-              <div class="view overlay">
-                <img src="{{publicacion.user.image}}" height="" class="card-img" alt="wow">
-                <a>
-                  <div class="mask rgba-white-slight"></div>
-                </a>
-              </div>
-            </div>
-            <div class="col">
-              <a href="#!" class="green-text">
-                <h6 class="h6 pb-1"><i class="fas fa-desktop pr-1"></i>{{publicacion.user.name}}</h6>
-              </a>
-              <p class="font-weight-normal">Nivel: </p>
-              <p class="font-weight-normal">Publicaciones totales: {{lengthpostsuser publications publicacion.id}}</p>
-              <a class="btn btn-success" href="/users/perfil/{{publicacion.user.id}}">Ver perfil</a>
+    <div class="col" style="max-width: 1500px;background-color: #343a40">
+      <div class="card mb-3" style="background-color: #343a40">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="/imagenes/oferta/bob-esponja.jpg" class="card-img" style="width: 900px">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body" style="margin-left:400px">
+              <h1 class="card-title">{{oferta.title}}</h1>
+              <p class="card-text">{{oferta.description}}</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
             </div>
           </div>
         </div>

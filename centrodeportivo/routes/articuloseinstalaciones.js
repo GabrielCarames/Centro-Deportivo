@@ -95,17 +95,17 @@ router.get('/goToPage/:idPage', async function(req, res, next) {
   });
 
 router.get('/iroferta/:idoferta', async function(req, res, next) {
-  const publications = await getposts();
-  var posts = await getposts();
+  const offer = await getofertas();
+  var ofertas = await getofertas();
   var comments = await getcomments();
-  var idpublicacion = req.params.idpublicacion;
-  var publicacion = posts.find(publicacion => {
-    return(publicacion.id == idpublicacion);
+  var idoferta = req.params.idoferta;
+  var oferta = ofertas.find(oferta => {
+    return(oferta.id == idoferta);
   });
   var comentario = comments.filter(comentario => {
-    return(comentario.idpost == idpublicacion);
+    return(comentario.idpost == idoferta);
   });
-  res.render('oferta', {publicacion, comentario, publications})
+  res.render('oferta', {oferta, comentario, offer})
 });
 
 router.post('/subircomentario', async function(req, res, next) {
