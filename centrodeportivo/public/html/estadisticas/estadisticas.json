@@ -1,0 +1,81 @@
+{
+  "infoPartidas":[
+        {
+            "jugador1": {
+                "nombre": "manuel",
+                "clase": {
+                    "idClase" : 1,
+                    "iconClase": "./estadisticas/lucas.jpeg"
+                },
+                "items": {
+                    "item1": "../imagenes/estadisticas/cave.jpeg",
+                    "item2": "./estadisticas/cave.jpeg",
+                    "item3": "./estadisticas/cave.jpeg",
+                    "item4": "./estadisticas/cave.jpeg",
+                    "item5": "./estadisticas/cave.jpeg",
+                    "item6": "./estadisticas/cave.jpeg"
+                }
+            },
+            "jugador2":{
+                "nombre": "manuel",
+                "clase": {
+                    "idClase" : 2,
+                    "iconClase": "./estadisticas/lucas.jpeg"
+                },
+                "items": {
+                    "item1": "./estadisticas/cave.jpeg",
+                    "item2": "./estadisticas/cave.jpeg",
+                    "item3": "./estadisticas/cave.jpeg",
+                    "item4": "./estadisticas/cave.jpeg",
+                    "item5": "./estadisticas/cave.jpeg",
+                    "item6": "./estadisticas/cave.jpeg"
+                }
+            }
+        },
+        {
+            "jugador1": {
+                "nombre": "manuel2",
+                "clase": {
+                    "idClase" : 3,
+                    "iconClase": "./estadisticas/lucas.jpeg"
+                },
+                "items": {
+                    "item1": "./estadisticas/cave.jpeg",
+                    "item2": "./estadisticas/cave.jpeg",
+                    "item3": "./estadisticas/cave.jpeg",
+                    "item4": "./estadisticas/cave.jpeg",
+                    "item5": "./estadisticas/cave.jpeg",
+                    "item6": "./estadisticas/cave.jpeg"
+                }
+            },
+            "jugador2":{
+                "nombre": "manuel2",
+                "clase": {
+                    "idClase" : 4,
+                    "iconClase": "./estadisticas/lucas.jpeg"
+                },
+                "items": {
+                    "item1": "./estadisticas/cave.jpeg",
+                    "item2": "./estadisticas/cave.jpeg",
+                    "item3": "./estadisticas/cave.jpeg",
+                    "item4": "./estadisticas/cave.jpeg",
+                    "item5": "./estadisticas/cave.jpeg",
+                    "item6": "./estadisticas/cave.jpeg"
+                }
+            }
+        }],
+    "clases": [
+        {
+            "nombre": "nombre",
+            "winrate": "algo (%)",
+            "loserate": "algo (%)",
+            "iconClass": "./estadisticas/rakan.png"
+        }
+    ],
+    "jugadores": [
+        {
+        "nombre": "nombre",
+        "winrate": "100% Win rate",
+        "iconPlayer": "./estadisticas/cave2.jpeg"
+    }]
+}

@@ -1,0 +1,48 @@
+.header {
+  text-align: center;
+  background: #0e0c0c;
+  font-size: 30px;
+}
+body {
+  background-color: rgb(36, 36, 36);
+  height: 500px;
+}
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(48, 48, 48);
+  color: white;
+  text-align: center;
+}
+#tnombre{
+    text-align: center;
+    font-size: 100px;
+}
+#menuarriba{
+    padding-left: 250px;
+    padding-right: 250px;
+    ;
+}
+#posts{
+    padding-left: 200px;
+}
+.themed-grid-col {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: rgba(86, 61, 124, .15);
+    border: 1px solid rgba(86, 61, 124, .2);
+  }
+  
+  .themed-container {
+    padding: 15px;
+    margin-bottom: 30px;
+    background-color: rgba(0, 123, 255, .15);
+    border: 1px solid rgba(0, 123, 255, .2);
+  }
+  .themed-grid-col {
+    padding: 10px;
+    background-color: rgba(86, 61, 124, .15);
+    border: 1px solid rgba(86, 61, 124, .2);
+    color: antiquewhite;
+  }

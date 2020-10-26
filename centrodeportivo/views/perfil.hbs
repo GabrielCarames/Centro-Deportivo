@@ -1,0 +1,168 @@
+<title>Perfil</title>
+<h1 class="h1-responsive font-weight-bold text-center my-5" style="color: white;">Perfil</h1>
+<div class="card bg-light mb-3" style="max-width: 1702px;margin-left: 100px;color: white;">
+  <div class="card-body" style="width: 1700px;background-color: #343a40;">
+    <div class="row" style="margin-right: 0px;">
+      <div class="col">
+        <div>
+          <img src="{{profile.image}}" height="" class="card-img" alt="wow">
+          <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+      </div>
+      <div class="col">
+        <div id="nombreusuario" class="col-lg-9" style="text-align: left;">
+          <h1 id=username class="font-weight-bold mb-9"><strong> {{profile.name}} </strong></h1>
+        </div>
+        <div class="card bg-light mb-3"
+          style="color: white;text-align: left; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+          <li class="list-group-item" style="background-color: rgb(36, 36, 36)">
+            <div id="descripcionusuario">
+              <p>Descripción: {{profile.description}}</p>
+              <p>Edad: {{profile.age}}</p>
+              <p>País: {{profile.country}}</p>
+              <p>Email: {{profile.email}}</p>
+              <p>Sexo: {{profile.sex}}</p>
+              <p>Experiencia: {{profile.xp}}</p>
+            </div>
+            <div>
+              <form id="descripcionnueva">
+              </form>
+            </div>
+          </li>
+        </div>
+      </div>
+      {{#if profile.connect}}
+      <div id="boton" class="col col-lg-2" style="max-width: 150px, text-aling: left;">
+        <button id="modificar" type="submit" class="btn btn-outline-danger" style="margin-top: 370px;">Modificar
+          Perfil</button>
+      </div>
+      {{/if}}
+      <div class="col">
+        <div class="card bg-light mb-2" style="color: white;text-align: left;height: 270px">
+          <h1 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+            <li class="list-group-item" style="background-color: rgb(36, 36, 36)">
+              <p>Level {{profile.level}} </p>
+            </li>
+            <li class="list-group-item" style="background-color: rgb(36, 36, 36)">
+              <p>XP 0 </p>
+            </li>
+            <li class="list-group-item" style="background-color: rgb(36, 36, 36)">
+              <p>Última Conexion: Ayer</p>
+            </li>
+          </h1>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 40px;">
+      <div class="col" id="publicaciones">
+
+      </div>
+      <div class="col-sm-4" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+        <div class="card bg-light mb-1" style="color: white;text-align: left;">
+          <li class="list-group-item" style="background-color: rgb(36, 36, 36)">
+            <div class="md-v-line"></div><i class="fas fa-laptop mr-4 pr-3"></i> Tiempo total pasado en el juego: 1500hs
+          </li>
+          <li class="list-group-item" style="background-color: rgb(36, 36, 36)">
+            <div class="md-v-line"></div><i class="fas fa-bomb mr-5"></i> Fecha de creacion de la cuenta:
+            {{converter profile.createdAt}}
+          </li>
+          <li class="list-group-item" style="background-color: rgb(36, 36, 36);">
+            <div class="md-v-line"></div><i class="fas fa-code mr-5"></i> Promedio XP por sesion: 1500xp
+          </li>
+          <li class="list-group-item" style="background-color: rgb(36, 36, 36)">
+            <div class="md-v-line"></div><i class="far fa-gem mr-5"></i> Sesion mas larga: 0,80 hs
+          </li>
+          <li class="list-group-item" style="background-color: rgb(36, 36, 36)">
+            <div class="md-v-line"></div><i class="fas fa-cogs mr-5"></i> K/D: 1,53
+          </li>
+          <!--<a type="button" class="btn btn-primary" href="http://localhost:3000/users/perfilraronoseayuda/{{converter profile.createdAt}}"></a>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $(document).ready(function () {
+    $.get("http://localhost:3000/foro", function (informacion) {
+      informacion.posts.forEach(function (publicacion, numeropublicacion) { // HACER ESTO MISMO PERO EN EL HTML CON FOREACH DE PUBLICACIONES GLOBALES 
+        $("#publicaciones").append(
+          '<div class="card bg-light mb-3" style="max-width: 1200px;"> ' +
+          '    <div class="card-body" style="background-color: rgb(36, 36, 36);">' +
+          '      <div class="container">' +
+          '        <div class="row" style="background-color: #343a40;">' +
+          '          <div class="col-sm">' +
+          '            <a id="publicacion' + numeropublicacion + '" href="/foro/irpublicacion/ + numeropublicacion" class="list-group-item list-group-item-action" style="color: snow;background-color: #343a40;">' + publicacion.title + '<p class="usuario" style="color: rgba(44, 128, 253, 0.815);margin-bottom: initial;">-' + $("#username").text() + '</p></a>' +
+          '          </div>' +
+          '          <div class="col-sm" style="background-color: #343a40;">' +
+          '            <div class="container">' +
+          '              <div class="row">' +
+          '                <div class="col-sm">' +
+          '                  <h6 style="text-align: right;">Likes <p>30</p></h6>' +
+          '                </div>' +
+          '                <div class="col-sm">' +
+          '                  <h6 style="text-align: right;">Mensajes <p>12</p></h6>' +
+          '                </div>' +
+          '                <div class="col-sm">' +
+          '                  <h6 style="text-align: right;">Visitas <p>68</p></h6>' +
+          '                </div>' +
+          '              </div>' +
+          '            </div>' +
+          '          </div>' +
+          '        </div>' +
+          '      </div>' +
+          '    </div>' +
+          '  </div>'
+        );
+      });
+    });
+    $('#modificar').click(function () {
+      event.preventDefault();
+      $("#descripcionusuario").remove();
+      $("#modificar").remove();
+      $("#descripcionnueva").append(
+        '<div class="md-form">' +
+        '<label for="name">Modificar nombre de usuario</label>' +
+        '<textarea id="name" class="form-control md-textarea" length="20" rows="1">{{profile.name}}</textarea>' +
+        '<label for="descripcion">Escribe una descripción</label>' +
+        '<textarea id="description" class="form-control md-textarea" length="120" rows="3">{{profile.description}}</textarea>' +
+        '<label for="email">Escribe tu direccion de correo electro</label>' +
+        '<textarea id="email" class="form-control md-textarea" length="120" rows="1">{{profile.email}}</textarea>' +
+        '<label for="country">Modificar tu country</label>' +
+        '<textarea id="country" class="form-control md-textarea" length="120" rows="1">{{profile.country}}</textarea>' +
+        '<label for="name">Modifica tu sexo</label>' +
+        '<textarea id="sex" class="form-control md-textarea" length="120" rows="1">{{profile.sex}}</textarea>' +
+        '<label for="name">Modificar edad del usuario</label>' +
+        '<textarea id="age" class="form-control md-textarea" length="120" rows="1">{{profile.age}}</textarea>' +
+        '</div>'
+      );
+      $("#descripcionnueva").append(
+        '<button id="aceptar" type="submit" class="btn btn-primary" style="margin-top: 50px;">Aceptar</button>' +
+        '<button id="aceptar" type="submit" class="btn btn-primary" style="margin-top: 50px;margin-left:5px">Cancelar</button>'
+      );
+      $('#aceptar').click(function () {
+        console.log("hola")
+        $.ajax({
+          url: 'http://localhost:3000/users/perfil',
+          type: 'PUT',
+          data:
+          {
+            name: $("#name").val(),
+            description: $("#description").val(),
+            email: $("#email").val(),
+            country: $("#country").val(),
+            sex: $("#sex").val(),
+            age: $("#age").val()
+          },
+          success: function (result) {
+            alert("Descripcion cambiada");
+            location.reload();
+          }
+        });
+      });
+      $('#aceptar').click(function () {
+        location.reload();
+      })
+    });
+  }); 
+</script>
