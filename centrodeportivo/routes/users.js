@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var cuentas = require('../public/html/user/users.json');
 var tablas = require("../models");
 var Usuarios = tablas.Users;
 var Reportes = tablas.Reports;

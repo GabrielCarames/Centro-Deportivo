@@ -32,6 +32,7 @@
           </div>
         </div>
         <div id="articuloseintalaciones">
+          {{#each ofertas}}
           <div class="card card-cascade card-ecommerce narrower" style="width: 400px;height:400px;background-color: #343a40;">
             <div class="view view-cascade overlay">
               <img class="card-img-top"
@@ -41,12 +42,10 @@
               </a>
             </div>
             <div class="card-body card-body-cascade text-center">
-              <h4 class="card-title"><strong><a href="/articuloseinstalaciones/irpublicacion/{{id}}">Product name</a></strong></h4>
-              <p class="card-text">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe
-                eveniet ut et voluptates.
-              </p>
+              <h4 class="card-title"><strong><a href="/articuloseinstalaciones/iroferta/{{id}}">{{title}}</a></strong></h4>
+              <p class="card-text"> {{description}}</p>
               <div class="card-footer">
-                <span class="float-left">49$</span>
+                <span class="float-left">${{price}}</span>
                 <span class="float-right">
                   <a class="" data-toggle="tooltip" data-placement="top" title="Quick Look"><i
                       class="fas fa-eye mr-3"></i></a>
@@ -56,6 +55,7 @@
               </div>
             </div>
           </div>
+          {{/each}}
         </div>
       </div>
     </div>

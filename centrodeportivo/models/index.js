@@ -13,17 +13,12 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.Posts = require("./posts")(sequelize, Sequelize);
+db.Ofertas = require("./ofertas")(sequelize, Sequelize);
 db.Comments = require("./comments")(sequelize, Sequelize);
 db.Users = require("./users")(sequelize, Sequelize);
 db.Reports = require("./reports")(sequelize, Sequelize);
 db.Userscomments = require("./userscomments")(sequelize, Sequelize);
 db.Usersposts = require("./usersposts")(sequelize, Sequelize);
-db.infoPartidas = require("./infoPartidas")(sequelize, Sequelize);
-db.clases = require("./clases")(sequelize, Sequelize);
-db.jugadores = require("./jugadores")(sequelize, Sequelize);
-db.items = require("./items")(sequelize, Sequelize);
-db.partidasItems = require("./partidasItems")(sequelize, Sequelize);
 db.Users.belongsToMany(db.Comments, {
     through: db.Userscomments,
     as: "comment",
@@ -34,35 +29,15 @@ db.Comments.belongsToMany(db.Users, {
     as: "user",
     foreignKey: "commentid", 
 });
-db.Users.belongsToMany(db.Posts, {
+db.Users.belongsToMany(db.Ofertas, {
     through: db.Usersposts,
-    as: "post",
+    as: "oferta",
     foreignKey: "userid",
 });
-db.Posts.belongsToMany(db.Users, {
+db.Ofertas.belongsToMany(db.Users, {
     through: db.Usersposts,
     as: "user",
     foreignKey: "postid", 
-});
-db.jugadores.hasOne(db.Users,{
-    foreignKey : 'id_jugador',
-});
-db.Users.belongsTo(db.jugadores,{
-    foreignKey : 'id',
-});
-db.infoPartidas.hasMany(db.clases,{
-    foreignKey : 'id_partida',
-});
-db.clases.belongsTo(db.infoPartidas,{
-    foreignKey : 'id',
-});
-db.infoPartidas.belongsToMany(db.items, {
-    through: db.partidasItems,
-    foreignKey: "id_partida",
-});
-db.items.belongsToMany(db.infoPartidas, {
-    through: db.partidasItems,
-    foreignKey: "id_item", 
 });
 
 module.exports = db;

@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var tablas = require("../models");
-const posts = require('../models/posts');
+const ofertas = require('../models/ofertas');
 var Users = tablas.Users;
-var Posts = tablas.Posts;
+var Ofertas = tablas.Ofertas;
 var Comments = tablas.Comments;
 var Userscomments = tablas.Userscomments
 var Usersposts = tablas.Usersposts
@@ -13,8 +13,8 @@ var userbanneddislike = []
 var userbannedlikecomment = []
 var userbanneddislikecomment = []
 
-async function getposts(){
-  var posts = await Posts.findAll({
+async function getofertas(){
+  var ofertas = await Ofertas.findAll({
     nest: true,
     raw: true,
     include: [ 
@@ -24,11 +24,11 @@ async function getposts(){
       }
   ]
   });
-  return posts;
+  return ofertas;
 }
 
 async function getrecentposts(){
-  var posts = await Posts.findAll({
+  var ofertas = await Ofertas.findAll({
     nest: true,
     raw: true,
     limit: 4,
@@ -42,7 +42,7 @@ async function getrecentposts(){
       }
   ]
   });
-  return posts;
+  return ofertas;
 }
 
 async function getcomments(){
@@ -94,7 +94,7 @@ router.get('/goToPage/:idPage', async function(req, res, next) {
     res.render('foro', { id })
   });
 
-router.get('/irpublicacion/:idpublicacion', async function(req, res, next) {
+router.get('/iroferta/:idoferta', async function(req, res, next) {
   const publications = await getposts();
   var posts = await getposts();
   var comments = await getcomments();
@@ -105,10 +105,7 @@ router.get('/irpublicacion/:idpublicacion', async function(req, res, next) {
   var comentario = comments.filter(comentario => {
     return(comentario.idpost == idpublicacion);
   });
-  res.render('publicacionusuario', {publicacion, comentario, publications})
-  views++;// Si se entra a una misma publicacion se sigue sumando los views, no quiero hacer que cuando publicacion que se bloquee o algo asi
-  //no hay una mejor forma mas linda sin tener qe hacerlo con el ++ y el bloqueo ese?
-  //alta paja hacerlo ahora chapotear despues
+  res.render('oferta', {publicacion, comentario, publications})
 });
 
 router.post('/subircomentario', async function(req, res, next) {
@@ -209,31 +206,29 @@ router.get('/adddislikecomment/:dislikecomment', async function(req, res, next) 
 });
 
 router.get('/filter/:filter', async function(req, res, next) {
-  var posts = await getposts();
+  var ofertas = await getofertas();
   var filter = req.params.filter;
-  console.log(filter)
-  var publications = posts.filter(publication => {
-    return(publication.filter == filter);
+  var ofertas = ofertas.filter(oferta => {
+    return(oferta.filter == filter);
   });
-  console.log(publications)
-  res.render('foro', {publications, filter})
+  res.render('foro', {ofertas, filter})
 });
 
-router.get('/foro/:idPage/:filter', async function(req, res, next) {
+router.get('/articuloseinstalaciones/:idPage/:filter', async function(req, res, next) {
   var filter = req.params.filter
-  var posts = await getposts();
+  var ofertas = await getofertas();
   if(filter == "Todos"){
-    const publications = await getposts();
+    const ofertas = await getofertas();
     var recentpublications = await getrecentposts();
     const comments = await getcomments();
-    res.render('foro', {publications, recentpublications, filter, comments})
+    res.render('articuloseinstalaciones', {ofertas, recentpublications, filter, comments})
   }
-  var publications = posts.filter(publication => {
-    return(publication.filter == filter);
+  var ofertas = ofertas.filter(oferta => {
+    return(oferta.filter == filter);
   });
   const comments = await getcomments();
   var recentpublications = await getrecentposts();
-  res.render('foro', {publications, recentpublications, filter, comments})
+  res.render('articuloseinstalaciones', {ofertas, recentpublications, filter, comments})
 });
 
   router.get('/crearpublicacion', async function(req, res, next) {

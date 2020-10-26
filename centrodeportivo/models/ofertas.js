@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-    const Posts = sequelize.define("posts",
+    const Ofertas = sequelize.define("ofertas",
     {
         id: {
             type: Sequelize.INTEGER,
@@ -8,6 +8,7 @@ module.exports = (sequelize, Sequelize) => {
         },
         title: Sequelize.STRING,
         description: Sequelize.STRING,
+        price: Sequelize.STRING,
         likes: Sequelize.INTEGER,
         dislikes: Sequelize.INTEGER,
         filter: Sequelize.STRING,
@@ -15,5 +16,5 @@ module.exports = (sequelize, Sequelize) => {
         idcomment: Sequelize.INTEGER
     }
     );
-    return Posts;
+    return Ofertas;
 };
