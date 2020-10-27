@@ -9,9 +9,10 @@ module.exports = (sequelize, Sequelize) => {
         title: Sequelize.STRING,
         description: Sequelize.STRING,
         price: Sequelize.STRING,
+        filter: Sequelize.STRING,
+        category: Sequelize.STRING,
         likes: Sequelize.INTEGER,
         dislikes: Sequelize.INTEGER,
-        filter: Sequelize.STRING,
         iduser: Sequelize.INTEGER,
         idcomment: Sequelize.INTEGER
     }

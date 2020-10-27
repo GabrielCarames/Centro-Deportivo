@@ -231,6 +231,19 @@ router.get('/articuloseinstalaciones/:idPage/:filter', async function(req, res, 
   res.render('articuloseinstalaciones', {ofertas, recentpublications, filter, comments})
 });
 
+router.get('/articuloseinstalacionescategory/:idPage/:category', async function(req, res, next) {
+  var category = req.params.category
+  var ofertas = await getofertas();
+  if(category == "Todos"){
+    const ofertas = await getofertas();
+    res.render('articuloseinstalaciones', {ofertas, category})
+  }
+  var ofertas = ofertas.filter(oferta => {
+    return(oferta.category == category);
+  });
+  res.render('articuloseinstalaciones', {ofertas, category})
+});
+
   router.get('/crearpublicacion', async function(req, res, next) {
     await countPosts()
   res.render('crearpublicacion')
