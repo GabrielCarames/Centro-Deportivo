@@ -237,7 +237,3 @@ router.get('/articuloseinstalaciones/:idPage/:filter', async function(req, res, 
 });
 
 module.exports = router;
-
-async function countPosts(){
-  const count = await Posts.count();
-} 
