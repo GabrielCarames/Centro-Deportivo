@@ -64,29 +64,17 @@
             role="Cerrarsesion">Cerrar Sesión</a>
         </li>
         {{else}}
-        <li id="ingresar" class="nav-item" style="margin-left: 500px; padding-top: 2px;">
-          <a class="btn btn-danger" style="color: white;" href="http://localhost:3000/users/ingreso"
+        <li id="ingresar" class="nav-item" style="margin-left: 610px; padding-top: 2px;">
+          <a class="btn btn-info" style="color: white;" href="http://localhost:3000/users/ingreso"
             role="Ingresar">Ingresar</a>
         </li>
         {{/if}}
       </ul>
       <div class="buscador" id="buscador" style="display: flex;">
         <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Buscar jugador/partida" aria-label="Search"
+          <input class="form-control mr-sm-2" type="search" placeholder="Buscar articulo/instalacion" aria-label="Search"
             id="buscar">
-          <div class="filtro" style="width: auto; position: relative">
-            <button class="boton2 boton2-secundario dropdown-toggle" type="button" id="dropdownMenu2"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-              style="border: 1px solid transparent; padding: .375rem .75rem; border-radius: .25rem;color: #fff; background-color: #6c757d; border-color: #6c757d;">Tipo</button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenu2" id="filtro">
-              <button class="dropdown-item" onclick="getter('1')">Partidas</button>
-              <button class="dropdown-item" onclick="getter('2')">Clases</button>
-              <button class="dropdown-item" onclick="getter('3')">Perfiles</button>
-              <button class="dropdown-item" onclick="getter('4')">Publicaciones</button>
-              <button class="dropdown-item" onclick="getter('5')">Items</button>
-            </div>
-          </div>
-          <button class="btn btn-outline-danger" type="submit" style="margin-left: 15px;">Buscar</button>
+          <button class="btn btn-info" type="submit" style="margin-left: 10px;">Buscar</button>
         </form>
       </div>
     </div>

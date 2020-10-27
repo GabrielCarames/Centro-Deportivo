@@ -14,7 +14,7 @@
           <div class="row" style="width: 700px;padding-top: 30px">
             <div class="col-sm" style="padding-left: 0cm;">
               <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                <button class="btn btn-secondary dropdown-toggle bg-dark"  type="button" id="dropdownMenuButton"
                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Filtrar por tipo
                 </button>
@@ -36,7 +36,7 @@
           {{#each ofertas}}
           <div class="col" style="margin-left: 20px;">
             <div class="card card-cascade card-ecommerce narrower"
-              style="width: 400px;height:400px;background-color: #343a40;">
+              style="width: 400px;height:400px;background-color: white;">
               <div class="view view-cascade overlay">
                 <img class="card-img-top"
                   src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/img%20(5).jpg" alt=""
@@ -45,7 +45,7 @@
                   <div class="mask rgba-white-slight"></div>
                 </a>
               </div>
-              <div class="card-body card-body-cascade text-center">
+              <div class="card-body card-body-cascade text-center" style="color: black;">
                 <h4 class="card-title"><strong><a href="/articuloseinstalaciones/iroferta/{{id}}">{{title}}</a></strong>
                 </h4>
                 <p class="card-text"> {{description}}</p>
@@ -54,7 +54,7 @@
                     <span class="float-left" style="padding-top: 10px;">Precio de reserva: ${{price}}</span>
                   </div>
                   <div class="col">
-                    <a type="button" class="btn btn-info">Añadir al carrito</a>
+                    <a type="button" class="btn btn-info" style="color: white;">Añadir al carrito</a>
                   </div>
                 </div>
               </div>
@@ -71,46 +71,47 @@
       <div class="row">
         <div class="row" style="padding-top: 10px;">
           <div class="card" style="width: 389px;">
-            <div class="card-body" style="background-color: #343a40;">
-              <h5 class="card-title" style="text-align: center;color: white;">Categorías</h5>
+            <div id="categoria" class="card-body" style="background-color: white;">
+              <h5 class="card-title" style="text-align: center;">Categorías</h5>
               <ul class="list-group list-group-flush" style="color:white">
-                <li class="list-group-item" style="background-color: #343a40;color:white;border-color: white;">
+                <li class="list-group-item" style="background-color: #b9d0d6;color:white;border-color: white;">
                   <div class="custom-control custom-checkbox custom-control-inline">
                     <input type="checkbox" class="custom-control-input" id="defaultInline1">
-                    <label class="custom-control-label" for="defaultInline1"><a href="/articuloseinstalaciones/articuloseinstalacionescategory/1/Todos">Seleccionar todos</a></label>
+                    <label class="custom-control-label" for="defaultInline1"><a href="/articuloseinstalaciones/articuloseinstalacionescategory/1/Todos" style="color: black;">Seleccionar todos</a></label>
                   </div>
                 </li>
-                <li class="list-group-item" style="background-color: #343a40;color:white;border-color: white;">
+                <li class="list-group-item" style="background-color: #4cafc2;color:white;border-color: white;">
                   <div class="custom-control custom-checkbox custom-control-inline">
-                    <input type="checkbox" class="custom-control-input" id="defaultInline2">
-                    <label class="custom-control-label" for="defaultInline2"><a href="/articuloseinstalaciones/articuloseinstalacionescategory/1/Futbol">Fútbol</a></label>
+                    <input type="checkbox" class="custom-control-input" id="defaultInline2" value="futbol">
+                    <label class="custom-control-label" for="defaultInline2"><a href="/articuloseinstalaciones/articuloseinstalacionescategory/1/Futbol" style="color: black;">Fútbol</a></label>
                   </div>
                 </li>
-                <li class="list-group-item" style="background-color: #343a40;border-color: white;">
+                <li class="list-group-item" style="background-color: #4cafc2;border-color: white;">
                   <div class="custom-control custom-checkbox custom-control-inline">
                     <input type="checkbox" class="custom-control-input" id="defaultInline3">
-                    <label class="custom-control-label" for="defaultInline3"><a href="/articuloseinstalaciones/articuloseinstalacionescategory/1/Tenis">Tenis</a></label>
+                    <label class="custom-control-label" for="defaultInline3"><a href="/articuloseinstalaciones/articuloseinstalacionescategory/1/Tenis" style="color: black;">Tenis</a></label>
                   </div>
                 </li>
-                <li class="list-group-item" style="background-color: #343a40;border-color: white;">
+                <li class="list-group-item" style="background-color: #4cafc2;border-color: white;">
                   <div class="custom-control custom-checkbox custom-control-inline">
                     <input type="checkbox" class="custom-control-input" id="defaultInline4">
-                    <label class="custom-control-label" for="defaultInline4"><a href="/articuloseinstalaciones/articuloseinstalacionescategory/1/Basquet">Basquet</a></label>
+                    <label class="custom-control-label" for="defaultInline4"><a href="/articuloseinstalaciones/articuloseinstalacionescategory/1/Basquet" style="color: black;">Basquet</a></label>
                   </div>
                 </li>
-                <li class="list-group-item" style="background-color: #343a40;border-color: white;">
+                <li class="list-group-item" style="background-color: #4cafc2;border-color: white;">
                   <div class="custom-control custom-checkbox custom-control-inline">
                     <input type="checkbox" class="custom-control-input" id="defaultInline5">
-                    <label class="custom-control-label" for="defaultInline5"><a href="/articuloseinstalaciones/articuloseinstalacionescategory/1/Meprecio">Menor precio</a></label>
+                    <label class="custom-control-label" for="defaultInline5"><a href="/articuloseinstalaciones/articuloseinstalacionescategory/1/Meprecio" style="color: black;">Menor precio</a></label>
                   </div>
                 </li>
-                <li class="list-group-item" style="background-color: #343a40;border-color: white;">
+                <li class="list-group-item" style="background-color: #4cafc2;border-color: white;">
                   <div class="custom-control custom-checkbox custom-control-inline">
                     <input type="checkbox" class="custom-control-input" id="defaultInline6">
-                    <label class="custom-control-label" for="defaultInline6"><a href="/articuloseinstalaciones/articuloseinstalacionescategory/1/Maprecio">Mayor precio</a></label>
+                    <label class="custom-control-label" for="defaultInline6"><a href="/articuloseinstalaciones/articuloseinstalacionescategory/1/Maprecio" style="color: black;">Mayor precio</a></label>
                   </div>
                 </li>
               </ul>
+              <!--<button id="categorizar">hola</button>-->
             </div>
           </div>
         </div>
@@ -120,7 +121,7 @@
 </container>
 <nav aria-label="..." style="padding-left: 40%;padding-top: 30px;">
   <ul class="pagination">
-    <li class="page-item disabled">
+    <li class="page-item disabled bg-dark">
       <span class="page-link" style="color: snow;background-color: #343a40;">Anterior</span>
     </li>
     <li id="rosterButton1" class="page-item active"><a class="page-link" href="foro/goToPage/"
@@ -135,6 +136,13 @@
 <script>
   $(document).ready(function () {
     $('.toast').toast('show');
+    console.log($("#categoria").val())
+    $('#categorizar').on('click', function (event) {
+      event.preventDefault();
+      console.log($("#categoria").val())
+      //console.log($("#categoria").val())
+      //location.href = "http://localhost:3000/articuloseinstalaciones/articuloseinstalacionescategory/1/" + $("#categoria").val()
+    });
   });
 
 </script>
